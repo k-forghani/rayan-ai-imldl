@@ -1,11 +1,14 @@
 name: ai
 channels:
+  - pytorch
+  - nvidia
   - conda-forge
   - bioconda
   - defaults
 dependencies:
   - _libgcc_mutex=0.1=conda_forge
   - _openmp_mutex=4.5=2_gnu
+  - absl-py=2.1.0=pyhd8ed1ab_0
   - alsa-lib=1.2.12=h4ab18f5_0
   - anyio=4.4.0=pyhd8ed1ab_0
   - aom=3.9.1=hac33072_0
@@ -18,7 +21,9 @@ dependencies:
   - attrs=23.2.0=pyh71513ae_0
   - babel=2.14.0=pyhd8ed1ab_0
   - beautifulsoup4=4.12.3=pyha770c72_0
+  - blas=1.0=mkl
   - bleach=6.1.0=pyhd8ed1ab_0
+  - blinker=1.8.2=pyhd8ed1ab_0
   - brotli=1.1.0=hd590300_1
   - brotli-bin=1.1.0=hd590300_1
   - brotli-python=1.1.0=py312h30efb56_1
@@ -31,8 +36,18 @@ dependencies:
   - certifi=2024.7.4=pyhd8ed1ab_0
   - cffi=1.16.0=py312hf06ca03_0
   - charset-normalizer=3.3.2=pyhd8ed1ab_0
+  - click=8.1.7=unix_pyh707e725_0
+  - colorama=0.4.6=pyhd8ed1ab_0
   - comm=0.2.2=pyhd8ed1ab_0
   - contourpy=1.2.1=py312h8572e83_0
+  - cuda-cudart=12.1.105=0
+  - cuda-cupti=12.1.105=0
+  - cuda-libraries=12.1.0=0
+  - cuda-nvrtc=12.1.105=0
+  - cuda-nvtx=12.1.105=0
+  - cuda-opencl=12.6.37=0
+  - cuda-runtime=12.1.0=0
+  - cuda-version=12.6=3
   - cycler=0.12.1=pyhd8ed1ab_0
   - dav1d=1.2.1=hd590300_0
   - dbus=1.13.6=h5008d03_3
@@ -45,6 +60,9 @@ dependencies:
   - executing=2.0.1=pyhd8ed1ab_0
   - expat=2.6.2=h59595ed_0
   - ffmpeg=6.1.1=gpl_he2f97eb_114
+  - filelock=3.15.4=pyhd8ed1ab_0
+  - flask=3.0.3=pyhd8ed1ab_0
+  - flask-compress=1.15=pyhd8ed1ab_0
   - font-ttf-dejavu-sans-mono=2.37=hab24e00_0
   - font-ttf-inconsolata=3.000=h77eed37_0
   - font-ttf-source-code-pro=2.038=h77eed37_0
@@ -57,11 +75,13 @@ dependencies:
   - freeglut=3.2.2=ha6d2627_3
   - freetype=2.12.1=h267a509_2
   - fribidi=1.0.10=h36c2ea0_0
+  - fsspec=2024.6.1=pyhff2d567_0
   - gettext=0.22.5=h59595ed_2
   - gettext-tools=0.22.5=h59595ed_2
   - glib=2.80.2=hf974151_0
   - glib-tools=2.80.2=hb6ce0ca_0
   - gmp=6.3.0=hac33072_2
+  - gmpy2=2.1.5=py312h1d5cde6_1
   - gnutls=3.7.9=hb077bed_0
   - graphite2=1.3.13=h59595ed_1003
   - gst-plugins-base=1.24.5=hbaaba92_0
@@ -73,6 +93,7 @@ dependencies:
   - hpack=4.0.0=pyh9f0ad1d_0
   - httpcore=1.0.5=pyhd8ed1ab_0
   - httpx=0.27.0=pyhd8ed1ab_0
+  - huggingface_hub=0.24.5=pyhd8ed1ab_0
   - hyperframe=6.0.1=pyhd8ed1ab_0
   - icu=73.2=h59595ed_0
   - idna=3.7=pyhd8ed1ab_0
@@ -81,9 +102,11 @@ dependencies:
   - importlib-metadata=8.2.0=pyha770c72_0
   - importlib_metadata=8.2.0=hd8ed1ab_0
   - importlib_resources=6.4.0=pyhd8ed1ab_0
+  - intel-openmp=2022.0.1=h06a4308_3633
   - ipykernel=6.29.5=pyh3099207_0
   - ipython=8.26.0=pyh707e725_0
   - isoduration=20.11.0=pyhd8ed1ab_0
+  - itsdangerous=2.2.0=pyhd8ed1ab_0
   - jasper=4.2.4=h536e39c_0
   - jedi=0.19.1=pyhd8ed1ab_0
   - jinja2=3.1.4=pyhd8ed1ab_0
@@ -114,17 +137,23 @@ dependencies:
   - libasprintf=0.22.5=h661eb56_2
   - libasprintf-devel=0.22.5=h661eb56_2
   - libass=0.17.1=h8fe9dca_1
-  - libblas=3.9.0=23_linux64_openblas
+  - libblas=3.9.0=16_linux64_mkl
   - libbrotlicommon=1.1.0=hd590300_1
   - libbrotlidec=1.1.0=hd590300_1
   - libbrotlienc=1.1.0=hd590300_1
   - libcap=2.69=h0f662aa_0
-  - libcblas=3.9.0=23_linux64_openblas
+  - libcblas=3.9.0=16_linux64_mkl
   - libclang-cpp15=15.0.7=default_h127d8a8_5
   - libclang-cpp18.1=18.1.8=default_hf981a13_1
   - libclang13=18.1.8=default_h9def88c_1
+  - libcublas=12.1.0.26=0
+  - libcufft=11.0.2.4=0
+  - libcufile=1.11.0.15=0
   - libcups=2.3.3=h4637d8d_4
+  - libcurand=10.3.7.37=0
   - libcurl=8.9.0=hdb1bdb2_0
+  - libcusolver=11.4.4.55=0
+  - libcusparse=12.0.2.55=0
   - libdeflate=1.20=hd590300_0
   - libdrm=2.4.122=h4ab18f5_0
   - libedit=3.1.20191231=he28a2e2_2
@@ -147,12 +176,15 @@ dependencies:
   - libiconv=1.17=hd590300_2
   - libidn2=2.3.7=hd590300_0
   - libjpeg-turbo=3.0.0=hd590300_1
-  - liblapack=3.9.0=23_linux64_openblas
-  - liblapacke=3.9.0=23_linux64_openblas
+  - liblapack=3.9.0=16_linux64_mkl
+  - liblapacke=3.9.0=16_linux64_mkl
   - libllvm15=15.0.7=hb3ce162_4
   - libllvm18=18.1.8=h8b73ec9_1
   - libnghttp2=1.58.0=h47da74e_1
+  - libnpp=12.0.2.50=0
   - libnsl=2.0.1=hd590300_0
+  - libnvjitlink=12.1.105=0
+  - libnvjpeg=12.1.1.14=0
   - libogg=1.3.5=h4ab18f5_0
   - libopenblas=0.3.27=pthreads_hac2b453_1
   - libopencv=4.10.0=qt6_py312h131ea51_601
@@ -193,13 +225,19 @@ dependencies:
   - libxkbcommon=1.7.0=h2c5496b_1
   - libxml2=2.12.7=h4c95cb1_3
   - libzlib=1.3.1=h4ab18f5_1
+  - lightning-utilities=0.11.6=pyhd8ed1ab_0
+  - llvm-openmp=15.0.7=h0cdce71_0
   - lz4-c=1.9.4=hcb278e6_0
   - markupsafe=2.1.5=py312h98912ed_0
   - matplotlib=3.9.1=py312h7900ff3_0
   - matplotlib-base=3.9.1=py312h9201f00_0
   - matplotlib-inline=0.1.7=pyhd8ed1ab_0
   - mistune=3.0.2=pyhd8ed1ab_0
+  - mkl=2022.1.0=hc2b9512_224
+  - mpc=1.3.1=hfe3b2da_0
+  - mpfr=4.2.1=h38ae2d0_2
   - mpg123=1.32.6=h59595ed_0
+  - mpmath=1.3.0=pyhd8ed1ab_0
   - munkres=1.1.4=pyh9f0ad1d_0
   - mysql-common=8.3.0=h70512c7_5
   - mysql-libs=8.3.0=ha479ceb_5
@@ -209,6 +247,7 @@ dependencies:
   - ncurses=6.5=h59595ed_0
   - nest-asyncio=1.6.0=pyhd8ed1ab_0
   - nettle=3.9.1=h7ab15ed_0
+  - networkx=3.3=pyhd8ed1ab_1
   - notebook-shim=0.2.4=pyhd8ed1ab_0
   - nspr=4.35=h27087fc_0
   - nss=3.102=h593d115_0
@@ -256,6 +295,10 @@ dependencies:
   - python-json-logger=2.0.7=pyhd8ed1ab_0
   - python-tzdata=2024.1=pyhd8ed1ab_0
   - python_abi=3.12=4_cp312
+  - pytorch=2.4.0=py3.12_cuda12.1_cudnn9.1.0_0
+  - pytorch-cuda=12.1=ha16c6d3_5
+  - pytorch-lightning=2.4.0=pyhd8ed1ab_0
+  - pytorch-mutex=1.0=cuda
   - pytz=2024.1=pyhd8ed1ab_0
   - pyyaml=6.0.1=py312h98912ed_1
   - pyzmq=26.0.3=py312h8fd38d8_0
@@ -283,6 +326,7 @@ dependencies:
   - stack_data=0.6.2=pyhd8ed1ab_0
   - statsmodels=0.14.2=py312h085067d_0
   - svt-av1=2.1.0=hac33072_0
+  - sympy=1.13.0=pypyh2585a3b_103
   - tbb=2021.12.0=h434a139_3
   - terminado=0.18.1=pyh0d859eb_0
   - threadpoolctl=3.5.0=pyhc1e730c_0
@@ -290,6 +334,10 @@ dependencies:
   - tk=8.6.13=noxft_h4845f30_101
   - toml=0.10.2=pyhd8ed1ab_0
   - tomli=2.0.1=pyhd8ed1ab_0
+  - torchaudio=2.4.0=py312_cu121
+  - torchmetrics=1.4.0.post0=pyhd8ed1ab_0
+  - torchtriton=3.0.0=py312
+  - torchvision=0.19.0=py312_cu121
   - tornado=6.4.1=py312h9a8786e_0
   - traitlets=5.14.3=pyhd8ed1ab_0
   - types-python-dateutil=2.9.0.20240316=pyhd8ed1ab_0
@@ -305,6 +353,7 @@ dependencies:
   - webcolors=24.6.0=pyhd8ed1ab_0
   - webencodings=0.5.1=pyhd8ed1ab_2
   - websocket-client=1.8.0=pyhd8ed1ab_0
+  - werkzeug=3.0.3=pyhd8ed1ab_0
   - wheel=0.43.0=pyhd8ed1ab_1
   - x264=1!164.3095=h166bdaf_2
   - x265=3.5=h924138e_3
@@ -339,8 +388,19 @@ dependencies:
   - zstandard=0.23.0=py312h3483029_0
   - zstd=1.5.6=ha6fb4c9_0
   - pip:
+      - captum==0.7.0
+      - et-xmlfile==1.1.0
+      - grpcio==1.65.4
+      - ipywidgets==8.1.3
+      - jupyterlab-widgets==3.0.11
       - kaggle==1.6.17
+      - markdown==3.6
+      - openpyxl==3.1.5
+      - protobuf==4.25.4
       - python-slugify==8.0.4
+      - tb-nightly==2.18.0a20240804
+      - tensorboard-data-server==0.7.2
       - text-unidecode==1.3
       - tqdm==4.66.4
+      - widgetsnbextension==4.0.11
 prefix: /home/oak/miniconda3/envs/ai
