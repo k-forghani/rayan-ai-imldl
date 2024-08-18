@@ -161,4 +161,13 @@ cython_debug/
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
 
+# H1
+
 creditcard.csv
+
+# H2
+
+CATS_DOGS.zip
+CATS_DOGS
+Deep_learning_tutorials
+CustomImageCNNModel.pt
